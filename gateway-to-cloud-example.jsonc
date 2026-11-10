@@ -1,0 +1,8 @@
+{
+    "action": "sleepBegin",
+    "lightIntensity": 100,
+    "tempCelsius": 25,
+    "humidity": 0.7,
+
+    "timestamp": "2026-01-01T12:00:00+07:00",
+}

@@ -1,0 +1,20 @@
+@startuml Clock
+
+[*] -> Idle
+
+Idle --> Locked : timed AND phoneInserted
+
+Locked -> Slept : userSlept
+
+Slept --> Alarm : timerFinished
+Slept -> Unlocked : emergencyUnlocked
+
+Alarm --> Up : userWokeUp
+Alarm -> Unlocked : emergencyUnlocked
+
+Up -> Unlocked : userWokeUpAboveThreshold OR emergencyUnlocked
+Up -> Alarm : userBackToSleep
+
+Unlocked -> Idle : phoneRemoved
+
+@enduml
