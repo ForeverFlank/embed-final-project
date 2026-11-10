@@ -1,8 +1,8 @@
 # Notes
 
-## Sensor node ↔ Gateway
+## Sensor node → Gateway
 
-For the senser node ↔ gateway communication, sending bytes would probably be sufficient, though JSON offers easy-to-understand data.
+For the senser node → gateway communication, sending bytes would probably be sufficient, though JSON offers easy-to-understand data.
 
 ### Design consideration
 
@@ -35,4 +35,19 @@ When combined, the message size totals to 216 bits, or 27 bytes; far below the l
     "force1": 1194,
     "force2": 562,
 }
+```
+
+## Gateway → Cloud
+
+```jsonc
+{
+    "action": "sleepBegin", // or sleepEnd
+
+    "lightIntensity": 100,
+    "tempCelsius": 25,
+    "humidityPercent": 70,
+
+    "timestamp": "2026-01-01T12:00:00+07:00", // ISO8601 format
+}
+
 ```
